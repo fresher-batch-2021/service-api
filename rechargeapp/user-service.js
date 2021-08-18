@@ -1,6 +1,5 @@
 class UserService {
 
-
     static login(userName, password) {
         const selectedData = {
             selector: {
@@ -25,4 +24,5 @@ class UserService {
 
         let url = "https://2fbcb9ec-d57d-431a-8d72-186d88ddf478-bluemix.cloudantnosqldb.appdomain.cloud//rechargeapp_users";
         return (axios.post(url, formData, { headers: { 'Authorization': basicAuth } }));
-    }}
+    }
+}
