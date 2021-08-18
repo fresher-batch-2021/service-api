@@ -1,6 +1,5 @@
 class UserService {
-    
-    //free recharge please contact deja
+
 
     static login(userName, password) {
         const selectedData = {
@@ -16,6 +15,7 @@ class UserService {
         let url = "https://2fbcb9ec-d57d-431a-8d72-186d88ddf478-bluemix.cloudantnosqldb.appdomain.cloud//rechargeapp_users/_find";
         return (axios.post(url, selectedData, { headers: { 'Authorization': basicAuth } }));
     }
+    //login service //
 
     static register(formData) {
 
