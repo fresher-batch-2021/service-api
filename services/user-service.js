@@ -5,7 +5,7 @@ const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
 class UserService {
 
     /**
-     * this method checks login user service
+     * this method invokes login user service
      * @param {*} email 
      * @param {*} password 
      * @returns 
@@ -27,7 +27,7 @@ class UserService {
 
     }
     /**
-     * this method checks register datas
+     * this method invokes register user service
      * @param {*} registerValues 
      * @returns 
      */
