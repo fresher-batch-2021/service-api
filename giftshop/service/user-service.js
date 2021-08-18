@@ -5,7 +5,7 @@ var endpoint = 'https://75b0afe3-3fa7-477b-8352-bdcfcd522a16-bluemix.cloudantnos
 const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
 
 
-class crud {
+class userService {
     // login user
     static login(email, password) {
 
