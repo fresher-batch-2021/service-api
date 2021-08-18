@@ -5,8 +5,12 @@ var endpoint = 'https://75b0afe3-3fa7-477b-8352-bdcfcd522a16-bluemix.cloudantnos
 const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
 
 
-class userService {
-    // login user
+class UserService {
+    /**
+     * this method calls login rest api
+     * @param {String} email 
+     * @param {*String} password 
+     */ 
     static login(email, password) {
 
         const url = 'https://75b0afe3-3fa7-477b-8352-bdcfcd522a16-bluemix.cloudantnosqldb.appdomain.cloud/giftshop_user/_find';
@@ -20,7 +24,7 @@ class userService {
         };
         axios.post(url, requestData, { headers: { Authorization: basicAuth } })
             .then(res => {
-                let data = res.data.docs[0];
+                const data = res.data.docs[0];
                 console.log("yesh" + data);
 
                 if (data == undefined) {
