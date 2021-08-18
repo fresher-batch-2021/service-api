@@ -6,14 +6,14 @@ const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
 
 
 class UserService {
-/**
- * 
- * @param {*this is for login uder check} email 
- * @param {*this is for login uder check} password1 
- * @param {*this is for login uder check} role 
- * @returns 
- */ 
-    static login(email, password1,role) {
+    /**
+     * this is for login user check
+     * @param {*} email 
+     * @param {*} password1 
+     * @param {*} role 
+     * @returns 
+     */
+    static login(email, password1, role) {
 
 
         const url = "https://b4af4ef2-55e1-4a9b-9b02-8168e5964652-bluemix.cloudantnosqldb.appdomain.cloud/trainticketapp_users/_find";
@@ -29,14 +29,14 @@ class UserService {
 
         return axios.post(url, requestData, { headers: { Authorization: basicAuth } });
     }
-    
+
     static register(formValues) {
 
 
 
-        const url="https://b4af4ef2-55e1-4a9b-9b02-8168e5964652-bluemix.cloudantnosqldb.appdomain.cloud/trainticketapp_users";
+        const url = "https://b4af4ef2-55e1-4a9b-9b02-8168e5964652-bluemix.cloudantnosqldb.appdomain.cloud/trainticketapp_users";
 
-        return   axios.post(url,formValues,{ headers: { 'Authorization': basicAuth } });
+        return axios.post(url, formValues, { headers: { 'Authorization': basicAuth } });
 
     }
 
