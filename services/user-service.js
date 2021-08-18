@@ -4,6 +4,13 @@ const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
 
 class UserService {
 
+    /**
+     * this method checks login user service
+     * @param {*} email 
+     * @param {*} password 
+     * @returns 
+     */
+
     static login(email, password) {
 
         const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_users/_find"
@@ -19,6 +26,11 @@ class UserService {
         return axios.post(url, requestData, { headers: { Authorization: basicAuth } });
 
     }
+    /**
+     * this method checks register datas
+     * @param {*} registerValues 
+     * @returns 
+     */
     static register(registerValues) {
         const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_users"
         return axios.post(url, registerValues, { headers: { 'Authorization': basicAuth } });
