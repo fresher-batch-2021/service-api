@@ -29,7 +29,11 @@ class UserService {
 
         return axios.post(url, requestData, { headers: { Authorization: basicAuth } });
     }
-
+/**
+ * this is for register
+ * @param {*} formValues 
+ * @returns 
+ */
     static register(formValues) {
 
 
