@@ -22,12 +22,11 @@ class UserService {
   }
 
   static register(registerObj) {
-
     const url =
       "https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/jobportal";
     console.log(basicAuth);
     return axios.post(url, registerObj, {
-      headers: { Authorization: basicAuth }
+      headers: { Authorization: basicAuth },
     });
   }
 }
