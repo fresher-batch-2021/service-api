@@ -3,6 +3,12 @@ const dbPassword='e455d34a303110b468819fbc14388b5e';
 const basicAuth= 'Basic ' + btoa(dbUsername+':'+dbPassword);
 
 class UserService{
+    /**
+     * 
+     * @param {string} username 
+     * @param {string} password 
+     * @returns 
+     */
     static login(username, password){
 
     const url="https://a7e75d33-40d2-47a6-a9b9-f80dbbc41c98-bluemix.cloudantnosqldb.appdomain.cloud/movieapp_user/_find";
