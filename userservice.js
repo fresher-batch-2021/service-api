@@ -1,28 +1,38 @@
-const dbUsername = "apikey-v2-qnl37sqy0oqwj8owtrhj6kam3p39wzmc0d46oflhvln";
-const dbPassword = "cb14c8c9976ced0867c79d8eb625505a";
-const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
-const url = "https://a1b21745-8512-41b2-8506-c83a13a27993-bluemix.cloudantnosqldb.appdomain.cloud/medicalshop_users/_find";
-class userService
-{
-    static login(email, password)
-    {
-        
-   
-const requsetData = {
-    selector: {
-        email: email,
-        password: password
-    },
-    fields: ["_id", "name", "email"],
-};
-console.log(requsetData);
-;
-return axios.post(url, requsetData, { headers: { 'Authorization': basicAuth } })
-}
-static register(userobj)
-{
-const url="https://a1b21745-8512-41b2-8506-c83a13a27993-bluemix.cloudantnosqldb.appdomain.cloud/medicalshop_users";
-return axios.post(url,userobj,{ headers :{ 'Authorization':basicAuth }});
-}
+
+const dbUsername = "apikey-v2-237a9fx60g51gyopiewwx5pb339t2r1xw085fzt3skgx";
+const dbPassword = "85e4a7e36372ac1e47c80f4b81a78d62";
+const basicAuth = "Basic " + btoa(dbUsername + ":" + dbPassword);
+class UserService {
+    /**this method added login service layer
+     * 
+     * @param {*} email 
+     * @param {*} password 
+     * @returns 
+     */
+    static login(email, password) {
+
+        const url = "https://99560248-15e7-4158-bfde-3c13e3ebf4e9-bluemix.cloudantnosqldb.appdomain.cloud/cakeshop_user/_find";
+        const loginObj = {
+            selector: {
+                email: email,
+                password: password
+
+            },
+            fields: ["_id", "name", "email"],
+        };
+        return axios.post(url, loginObj, { headers: { Authorization: basicAuth } });
+    }
+    /**
+     * this method added register service layer
+     * @param {*} regObj 
+     * @returns 
+     */
+    static register(regObj) {
+        console.log(regObj);
+        console.log(basicAuth);
+        const url = "https://99560248-15e7-4158-bfde-3c13e3ebf4e9-bluemix.cloudantnosqldb.appdomain.cloud/cakeshop_user";
+        return axios.post(url, regObj, { headers: { Authorization: basicAuth } });
+    }
+
 
 }
