@@ -6,7 +6,13 @@ const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
 
 
 class UserService {
-
+/**
+ * 
+ * @param {*this is for login uder check} email 
+ * @param {*this is for login uder check} password1 
+ * @param {*this is for login uder check} role 
+ * @returns 
+ */ 
     static login(email, password1,role) {
 
 
