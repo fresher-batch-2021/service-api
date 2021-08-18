@@ -1,5 +1,9 @@
 class UserList {
+
+    // get all users for grocery store app
+    
     async getAllUsers() {
+
         "User" = [
             {
                 UserName: "Tamil",
